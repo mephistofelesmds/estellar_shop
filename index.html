@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Estellar магазин</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+    <div class="hero-banner-container">
+      <img src="banner1.jpg" alt="Welcome banner" class="hero-banner">
+    </div>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="space-nav" id="mainNav">
+      <ul class="space-nav__list">
+        <li class="space-nav__item">
+          <a href="#" class="space-nav__link" data-section="goods">
+            <span class="space-nav__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </span>
+            <span class="space-nav__text">
+              <span class="space-nav__title">Товары</span>
+            </span>
+          </a>
+        </li>
+        <li class="space-nav__item">
+          <a href="#" class="space-nav__link" data-section="currency">
+            <span class="space-nav__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="5" r="1.5"/><circle cx="4" cy="9" r="1.5"/><circle cx="20" cy="9" r="1.5"/>
+                <circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/>
+                <line x1="12" y1="5" x2="4" y2="9"/><line x1="12" y1="5" x2="20" y2="9"/>
+                <line x1="4" y1="9" x2="8" y2="17"/><line x1="20" y1="9" x2="16" y2="17"/>
+              </svg>
+            </span>
+            <span class="space-nav__text">
+              <span class="space-nav__title">Получение валюты</span>
+            </span>
+          </a>
+        </li>
+        <li class="space-nav__item">
+          <a href="#" class="space-nav__link" data-section="salary">
+            <span class="space-nav__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </span>
+            <span class="space-nav__text">
+              <span class="space-nav__title">Зарплата админов</span>
+            </span>
+          </a>
+        </li>
+        <li class="space-nav__item">
+          <a href="#" class="space-nav__link" data-section="achievements">
+            <span class="space-nav__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
+            </span>
+            <span class="space-nav__text">
+              <span class="space-nav__title">выплаты при достижениях</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ПРИВЕТСТВИЕ -->
+    <div class="welcome-banner" id="welcomeBanner">
+      <div class="welcome-text">
+        <h2>estellar introduction</h2>
+        <p>Дорогие участники 𝅄 ֺ  ℰs͟͟t͟͟𝑒𝘭𝘭𝖺ꪚ ִ 𝅄 , мы рады представить вам магазин нашего флуда! С помощью валюты «Терра», ⏚, вы сможете приобрести различные товары.</p>
+        <p></p>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="custom-link"></a>
+      </div>
+      <div class="welcome-links">
+        <a href="#" class="interactive-badge"></a>
+      </div>
+    </div>
+
+    <!-- ФИЛЬТР (оставлен для совместимости, но не используется) -->
+    <div class="filter-bar">
+      <span class="filter-label"></span>
+      <div class="filter-btn active" data-filter="all"></div>
+    </div>
+
+    <!-- СЕТКА КАРТОЧЕК -->
+    <div class="fanfic-grid" id="fanficGrid"></div>
+
+    <div class="footer-note" id="footerNote"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
