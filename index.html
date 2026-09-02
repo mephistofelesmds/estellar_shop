@@ -3,85 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Estellar магазин</title>
+  <title>ESTELLAR · CYBER SHOP</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="cyber-grid"></div>
+  <div class="scanline"></div>
+  
   <div class="page-container">
-    <div class="hero-banner-container">
-      <img src="banner1.jpg" alt="Welcome banner" class="hero-banner">
-    </div>
-
-    <nav class="space-nav" id="mainNav">
-      <ul class="space-nav__list">
-        <li class="space-nav__item">
-          <a href="#" class="space-nav__link" data-section="goods">
-            <span class="space-nav__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </span>
-            <span class="space-nav__text">
-              <span class="space-nav__title">Товары</span>
-            </span>
-          </a>
-        </li>
-        <li class="space-nav__item">
-          <a href="#" class="space-nav__link" data-section="currency">
-            <span class="space-nav__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="5" r="1.5"/><circle cx="4" cy="9" r="1.5"/><circle cx="20" cy="9" r="1.5"/>
-                <circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/>
-                <line x1="12" y1="5" x2="4" y2="9"/><line x1="12" y1="5" x2="20" y2="9"/>
-                <line x1="4" y1="9" x2="8" y2="17"/><line x1="20" y1="9" x2="16" y2="17"/>
-              </svg>
-            </span>
-            <span class="space-nav__text">
-              <span class="space-nav__title">Получение валюты</span>
-            </span>
-          </a>
-        </li>
-        <li class="space-nav__item">
-          <a href="#" class="space-nav__link" data-section="salary">
-            <span class="space-nav__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </span>
-            <span class="space-nav__text">
-              <span class="space-nav__title">Зарплата админов</span>
-            </span>
-          </a>
-        </li>
-        <li class="space-nav__item">
-          <a href="#" class="space-nav__link" data-section="achievements">
-            <span class="space-nav__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-              </svg>
-            </span>
-            <span class="space-nav__text">
-              <span class="space-nav__title">Выплаты при достижениях</span>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="welcome-banner" id="welcomeBanner">
-      <div class="welcome-text">
-        <h2>estellar introduction</h2>
-        <p>Дорогие участники Estellar, мы рады представить вам магазин нашего флуда. С помощью валюты «Терра», ⏚, вы сможете приобрести различные товары.</p>
+    <div class="glitch-header">
+      <div class="logo-block">
+        <h1 class="glitch" data-text="SHOP">SHOP</h1>
+        <p class="subtitle">ESTELLAR</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="channel-link">
+        <span class="label">// CHANNEL</span>
+        <a href="http://t.me/estellarinf" target="_blank" rel="noopener noreferrer">t.me/estellarinf</a>
       </div>
     </div>
 
-    <div class="fanfic-grid" id="fanficGrid"></div>
+    <div class="status-bar" id="statusBar">
+      <button class="status-btn active" data-tab="services">ТОВАРЫ</button>
+      <button class="status-btn" data-tab="rewards">ВАЛЮТА</button>
+      <button class="status-btn" data-tab="staff">ЗАРПЛАТА</button>
+      <button class="status-btn" data-tab="achievements">ДОСТИЖЕНИЯ</button>
+    </div>
 
-    <div class="footer-note" id="footerNote"></div>
+    <div class="cyber-grid-container" id="contentContainer">
+      <div class="grid-card card-services" data-category="services">
+        <div class="card-header">
+          <span class="card-number">01</span>
+          <span class="card-title">УСЛУГИ</span>
+        </div>
+        <div class="card-content">
+          <div class="service-item">освобождение от чистки — 1700</div>
+          <div class="service-item">снятие варна — 2000</div>
+          <div class="service-item">анти-бан при неактиве 3 дня — 1700</div>
+          <div class="service-item">снижение нормы до 150 сообщ. — 1300</div>
+          <div class="service-item">дополнительная смена роли — 700</div>
+          <div class="service-item">продление реста на неделю — 1800</div>
+          <div class="service-item">видео с вами — 700</div>
+          <div class="service-item">возвращение забаненного — 5000</div>
+          <div class="service-item">снятие мута — 1500</div>
+        </div>
+      </div>
+
+      <div class="grid-card card-rewards" data-category="rewards">
+        <div class="card-header">
+          <span class="card-number">02</span>
+          <span class="card-title">НАГРАДЫ</span>
+        </div>
+        <div class="card-content">
+          <div class="reward-item">топ-3 активности за неделю — 100</div>
+          <div class="reward-item">1000+ сообщений за сутки — 500</div>
+          <div class="reward-item">актив под постами (нед.) — 300</div>
+          <div class="reward-item">оригинальная идея для интерактива — 100</div>
+          <div class="reward-item">участие в интерактивах/играх — свои награды</div>
+          <div class="reward-item">идея для видео — 30</div>
+          <div class="reward-item">бинго, тесты, актив-пост — 100</div>
+        </div>
+      </div>
+
+      <div class="grid-card card-staff" data-category="staff">
+        <div class="card-header">
+          <span class="card-number">03</span>
+          <span class="card-title">АДМИНИСТРАЦИЯ</span>
+        </div>
+        <div class="card-content">
+          <div class="staff-item">старший админ — 1500</div>
+          <div class="staff-item">младший админ — 1200</div>
+          <div class="staff-item">админ по лайфу / следящий — 800</div>
+          <div class="staff-item">активист — 800</div>
+          <div class="staff-item">контент-мейкер — 120 за видео</div>
+          <div class="staff-divider">зарплата каждые 2 недели</div>
+        </div>
+      </div>
+
+      <div class="grid-card card-achievements" data-category="achievements">
+        <div class="card-header">
+          <span class="card-number">04</span>
+          <span class="card-title">ДОСТИЖЕНИЯ</span>
+        </div>
+        <div class="card-content">
+          <div class="achievement-item">5000 сообщений — 1500</div>
+          <div class="achievement-item">10000 сообщений — 2000</div>
+          <div class="achievement-item">20000 сообщений — 2500</div>
+          <div class="achievement-item">50000 сообщений — 5000</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
