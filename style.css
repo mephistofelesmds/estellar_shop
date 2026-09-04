@@ -11,7 +11,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #ffffff;
-  font-family: 'Rajdhani', 'Courier New', monospace;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
   min-height: 100vh;
   color: #1a1a2e;
   display: flex;
@@ -40,11 +40,17 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(0, 140, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 20, 147, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(0, 140, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 20, 147, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
   z-index: 0;
   pointer-events: none;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .scanline {
@@ -57,17 +63,42 @@ body::before {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 140, 255, 0.02) 2px,
-    rgba(0, 140, 255, 0.02) 4px
+    rgba(0, 140, 255, 0.03) 2px,
+    rgba(0, 140, 255, 0.03) 4px
   );
   z-index: 0;
   pointer-events: none;
-  animation: scanMove 8s linear infinite;
+  animation: scanMove 6s linear infinite;
 }
 
 @keyframes scanMove {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
+}
+
+.glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 20, 147, 0.02) 3px,
+    rgba(255, 20, 147, 0.02) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  animation: glitchOverlay 0.5s steps(1) infinite;
+}
+
+@keyframes glitchOverlay {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 body > * {
@@ -87,6 +118,14 @@ body > * {
   border-radius: 0;
   border: 2px solid #008cff;
   position: relative;
+  animation: borderGlitch 3s infinite;
+}
+
+@keyframes borderGlitch {
+  0%, 90%, 100% { border-color: #008cff; }
+  92% { border-color: #ff1493; }
+  94% { border-color: #008cff; }
+  96% { border-color: #ff1493; }
 }
 
 .page-container::before {
@@ -99,6 +138,13 @@ body > * {
   border: 1px solid rgba(255, 20, 147, 0.2);
   pointer-events: none;
   z-index: -1;
+  animation: borderGlitch2 2.5s infinite;
+}
+
+@keyframes borderGlitch2 {
+  0%, 95%, 100% { border-color: rgba(255, 20, 147, 0.2); }
+  97% { border-color: rgba(0, 140, 255, 0.5); }
+  98% { border-color: rgba(255, 20, 147, 0.1); }
 }
 
 .glitch-header {
@@ -129,13 +175,21 @@ body > * {
 }
 
 .glitch {
-  font-family: 'Orbitron', monospace;
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-family: 'Share Tech', monospace;
+  font-size: 3.8rem;
+  font-weight: 700;
   color: #1a1a2e;
   text-transform: uppercase;
   letter-spacing: 4px;
   position: relative;
+  animation: textGlitch 2.5s infinite;
+}
+
+@keyframes textGlitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-2px, 1px); }
+  94% { transform: translate(2px, -1px); }
+  96% { transform: translate(-1px, 2px); }
 }
 
 .glitch::before,
@@ -151,36 +205,43 @@ body > * {
 
 .glitch::before {
   color: #008cff;
-  animation: glitch1 2s infinite;
+  animation: glitch1 1.8s infinite;
   clip-path: inset(20% 0 60% 0);
 }
 
 .glitch::after {
   color: #ff1493;
-  animation: glitch2 2s infinite;
+  animation: glitch2 2.2s infinite;
   clip-path: inset(60% 0 20% 0);
 }
 
 @keyframes glitch1 {
   0%, 90%, 100% { opacity: 0; transform: translate(0); }
-  92% { opacity: 1; transform: translate(-3px, 2px); }
-  94% { opacity: 0; transform: translate(3px, -2px); }
+  92% { opacity: 1; transform: translate(-4px, 2px); }
+  94% { opacity: 0; transform: translate(4px, -2px); }
 }
 
 @keyframes glitch2 {
   0%, 90%, 100% { opacity: 0; transform: translate(0); }
-  93% { opacity: 1; transform: translate(3px, -1px); }
-  95% { opacity: 0; transform: translate(-3px, 1px); }
+  93% { opacity: 1; transform: translate(4px, -1px); }
+  95% { opacity: 0; transform: translate(-4px, 1px); }
 }
 
 .subtitle {
-  font-family: 'Rajdhani', monospace;
-  font-size: 1rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
   color: #ff1493;
   letter-spacing: 6px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: -0.3rem;
+  animation: subtitleGlitch 4s infinite;
+}
+
+@keyframes subtitleGlitch {
+  0%, 95%, 100% { opacity: 1; }
+  97% { opacity: 0.2; }
+  98% { opacity: 1; }
 }
 
 .divider-line {
@@ -188,6 +249,12 @@ body > * {
   height: 3px;
   background: linear-gradient(90deg, #008cff, #ff1493);
   margin-top: 0.3rem;
+  animation: dividerPulse 2s ease-in-out infinite;
+}
+
+@keyframes dividerPulse {
+  0%, 100% { width: 60px; }
+  50% { width: 90px; }
 }
 
 .channel-link {
@@ -198,8 +265,8 @@ body > * {
 }
 
 .channel-link .label {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.6rem;
+  font-family: 'Share Tech', monospace;
+  font-size: 0.7rem;
   color: #008cff;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -207,15 +274,38 @@ body > * {
 }
 
 .channel-link a {
-  font-family: 'Rajdhani', monospace;
+  font-family: 'Share Tech Mono', monospace;
   color: #1a1a2e;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   border: 2px solid #ff1493;
   padding: 0.3rem 1rem;
   transition: all 0.3s ease;
   letter-spacing: 1px;
+  position: relative;
+}
+
+.channel-link a::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid #008cff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.channel-link a:hover::before {
+  opacity: 1;
+  animation: linkGlitch 0.5s steps(1) 2;
+}
+
+@keyframes linkGlitch {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .channel-link a:hover {
@@ -232,15 +322,33 @@ body > * {
   border: 2px solid rgba(0, 140, 255, 0.15);
   background: rgba(0, 140, 255, 0.03);
   justify-content: center;
+  position: relative;
+}
+
+.status-bar::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff1493, transparent);
+  animation: barScan 3s ease-in-out infinite;
+}
+
+@keyframes barScan {
+  0% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0); opacity: 0; }
 }
 
 .status-btn {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.7rem;
+  font-family: 'Share Tech', monospace;
+  font-size: 0.85rem;
   color: #1a1a2e;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   background: transparent;
   border: none;
   padding: 0.5rem 1.2rem;
@@ -279,6 +387,26 @@ body > * {
   background: #ff1493;
 }
 
+.status-btn:nth-child(odd) {
+  animation: btnGlitch1 3s infinite;
+}
+
+.status-btn:nth-child(even) {
+  animation: btnGlitch2 3.5s infinite;
+}
+
+@keyframes btnGlitch1 {
+  0%, 95%, 100% { transform: translate(0); }
+  96% { transform: translate(-1px, 0); }
+  97% { transform: translate(1px, 0); }
+}
+
+@keyframes btnGlitch2 {
+  0%, 95%, 100% { transform: translate(0); }
+  96% { transform: translate(1px, 0); }
+  97% { transform: translate(-1px, 0); }
+}
+
 .cyber-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -293,6 +421,12 @@ body > * {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: cardGlitch 4s infinite;
+}
+
+@keyframes cardGlitch {
+  0%, 98%, 100% { transform: translate(0); }
+  99% { transform: translate(1px, -1px); }
 }
 
 .grid-card::before {
@@ -311,10 +445,35 @@ body > * {
   100% { left: 100%; }
 }
 
+.grid-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff1493, transparent);
+  animation: lineSlide2 3.5s infinite;
+}
+
+@keyframes lineSlide2 {
+  0% { right: -100%; }
+  100% { right: 100%; }
+}
+
 .grid-card:hover {
   border-color: #ff1493;
   box-shadow: 0 0 30px rgba(255, 20, 147, 0.05);
   transform: translateY(-2px);
+}
+
+.grid-card:hover .card-number {
+  animation: numberGlitch 0.3s steps(1) 2;
+}
+
+@keyframes numberGlitch {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0; }
 }
 
 .card-header {
@@ -327,20 +486,20 @@ body > * {
 }
 
 .card-number {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Share Tech', monospace;
   color: #ff1493;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   opacity: 0.6;
 }
 
 .card-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Share Tech', monospace;
   color: #1a1a2e;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .card-content {
@@ -353,13 +512,14 @@ body > * {
 .reward-item,
 .staff-item,
 .achievement-item {
-  font-family: 'Rajdhani', monospace;
+  font-family: 'Share Tech Mono', monospace;
   color: #1a1a2e;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 0.2rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.03);
   letter-spacing: 0.5px;
-  font-weight: 500;
+  font-weight: 400;
+  position: relative;
 }
 
 .service-item::before,
@@ -372,42 +532,30 @@ body > * {
   font-weight: 300;
 }
 
+.service-item:hover,
+.reward-item:hover,
+.staff-item:hover,
+.achievement-item:hover {
+  animation: itemGlitch 0.2s steps(1) 2;
+}
+
+@keyframes itemGlitch {
+  0%, 100% { transform: translate(0); }
+  50% { transform: translate(1px, -1px); }
+}
+
 .staff-divider {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Share Tech', monospace;
   color: #ff1493;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 0.3rem;
   padding-top: 0.3rem;
   border-top: 2px solid rgba(255, 20, 147, 0.15);
   text-align: center;
-  font-weight: 600;
-}
-
-.footer-cyber {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  padding-top: 1.2rem;
-  border-top: 2px solid rgba(0, 140, 255, 0.1);
-  margin-top: 0.5rem;
-}
-
-.footer-text {
-  font-family: 'Orbitron', monospace;
-  color: #666;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.footer-divider {
-  color: #ff1493;
-  font-size: 0.5rem;
-  opacity: 0.5;
+  font-weight: 700;
+  animation: dividerPulse 2s ease-in-out infinite;
 }
 
 .hidden-card {
@@ -429,7 +577,7 @@ body > * {
   }
   
   .glitch {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   
   .glitch-header {
@@ -448,7 +596,7 @@ body > * {
   }
   
   .status-btn {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     padding: 0.3rem 0.8rem;
   }
 }
